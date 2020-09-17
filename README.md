@@ -1,3 +1,3 @@
 # The-Ominous-Corp
-
-Ryan Marizza was here!
+Project Team Members:
+Ryan Marizza 
