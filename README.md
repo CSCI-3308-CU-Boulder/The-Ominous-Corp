@@ -1,4 +1,8 @@
 # The-Ominous-Corp
 
+Mauro Nannini
 Ryan Marizza
-Jake Martin => I am adding more text here now ;) => 1
+Jake Martin I am adding more text here now ;)
+Jake Martin
+Chirag Telang
+
