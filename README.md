@@ -1,3 +1,8 @@
 # The-Ominous-Corp
 
-Ryan Marizza was here!
+Ryan Marizza
+Mauro Nannini
+Ryan Marizza
+Jake Martin
+Chirag Telang
+
