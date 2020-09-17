@@ -1,4 +1,5 @@
 # The-Ominous-Corp
+Angelo Vacca, 1
 
 Mauro Nannini
 Ryan Marizza
