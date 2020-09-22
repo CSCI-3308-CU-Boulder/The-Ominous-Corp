@@ -14,14 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Game.unity
-    - Assets/Game.unity.meta
     - Assets/Movement.cs
-    - Assets/Movement.cs.meta
-    - Assets/TankConstructor/Demo.unity
-    - ProjectSettings/EditorSettings.asset
     - 
-    m_Values: 00000000000000
+    m_Values: 0101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
