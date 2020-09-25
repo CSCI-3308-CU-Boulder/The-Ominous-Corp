@@ -7,7 +7,21 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<h1>Register</h1>
+	<h1>Login</h1>
+
+	<ul>
+	<% if(messages.success_msg){ %> 
+	<li><%= messages.success_msg %> </li>
+	<% } %>
+
+	</ul>
+
+	<ul>
+		<% if(messages.error){ %>
+		<li><%= messages.error %></li>
+
+		<% } %>
+	</ul>
 
 	<form action = "/Login" method = "POST">
 		<div>
