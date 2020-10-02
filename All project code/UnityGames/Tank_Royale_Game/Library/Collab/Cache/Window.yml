@@ -14,14 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/BodyRotate.cs
-    - Assets/BodyRotate.cs.meta
-    - Assets/Game.unity
     - 
-    m_Values: 01010101
-  RevisionSummary: 'Push game changes
-
-'
+    m_Values: 01
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
