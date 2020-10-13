@@ -17,6 +17,6 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         myPlay = GameObject.Find("PlayerTank").transform;
-        transform.position = myPlay.position + new Vector3(0,0,-10);
+        transform.position = myPlay.position + new Vector3(0,0,-30);
     }
 }

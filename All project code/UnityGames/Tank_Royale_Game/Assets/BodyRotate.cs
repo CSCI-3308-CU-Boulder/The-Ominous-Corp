@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class BodyRotate : MonoBehaviour
 {
-    float rotAng = 1.0F;
+    Vector3 V;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, rotAng, Space.Self);
+        V = GameObject.Find("PlayerTank").GetComponent<Movement>().Vel;
+        float rotAng = angle(new Vector2(V.x, V.y));
+        transform.localEulerAngles = new Vector3(0, 0, rotAng);
+    }
+
+    private float angle(Vector2 vec)
+    {
+        float sign = (vec.y < 0) ? -1f : 1f;
+        return Vector2.Angle(Vector2.right, vec) * sign - 90;
     }
 }

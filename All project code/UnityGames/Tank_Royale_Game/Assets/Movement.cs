@@ -6,36 +6,92 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    Vector3 Vec;
-    Vector3 Rot;
-    float speed = 0.02F;
+    Vector3 newPos;
+    public Vector3 Vel;
+    Vector3 Acc;
+    const float acc = 0.002F;
+    const float max_speed = 1F;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vel = new Vector3(0, 0, 0);
+        Acc = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vec = transform.localPosition;
+        newPos = transform.localPosition;
+        newPos.x += Vel.x * (1 / 60F);
+        newPos.y += Vel.y * (1 / 60F);
+        transform.localPosition = newPos;
+
         if (Input.GetKey("w"))
         {
-            Vec.y += speed;
+            Acc.y = acc;
+            if (Vel.y < 0)
+            {
+                Acc.y *= 1.8F;
+            }
         }
-        if (Input.GetKey("s"))
+        else if (Input.GetKey("s"))
         {
-            Vec.y -= speed;
+            Acc.y = -1 * acc;
+            if(Vel.y > 0)
+            {
+                Acc.y *= 1.8F;
+            }
         }
+        else
+        {
+            if(Vel.y != 0)
+            {
+                Acc.y = Mathf.Sign(Vel.y) * acc * -0.5F;
+            }
+            else
+            {
+                Acc.y = 0;
+            }
+        }
+
         if (Input.GetKey("a"))
         {
-            Vec.x -= speed;
+            Acc.x = -1 * acc;
+            if (Vel.x > 0)
+            {
+                Acc.x *= 1.8F;
+            }
         }
-        if (Input.GetKey("d"))
+        else if (Input.GetKey("d"))
         {
-            Vec.x += speed;
+            Acc.x = acc;
+            if (Vel.x < 0)
+            {
+                Acc.x *= 1.8F;
+            }
         }
-        transform.localPosition = Vec;
+        else
+        {
+            if (Vel.x != 0)
+            {
+                Acc.x = Mathf.Sign(Vel.x) * acc * -0.5F;
+            }
+            else
+            {
+                Acc.x = 0;
+            }
+        }
+
+        Vel.x += Acc.x;
+        Vel.y += Acc.y;
+        if (Mathf.Abs(Vel.x) >= max_speed)
+        {
+            Vel.x = Mathf.Sign(Vel.x) * max_speed;
+        }
+        if (Mathf.Abs(Vel.y) >= max_speed)
+        {
+            Vel.y = Mathf.Sign(Vel.y) * max_speed;
+        }
     }
 }
