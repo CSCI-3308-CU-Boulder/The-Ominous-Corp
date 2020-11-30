@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tank Royale | Register</title>
+	<link rel="shortcut icon" href="../resources/favicon.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>Register</h1>
+
+
+	<ul>
+		<% if(typeof errors != 'undefined') { %> <% errors.forEach(error=>{ %>
+		<li><%= error.message %></li>
+		<% }) %> <% } %>
+	</ul>
+
+	<form action = "/register" method = "POST">
+		<div>
+			<input type="text" id="name" name="name" placeholder="Name" required>
+		</div>
+		<div>
+			<input type="email" id="email" name="email" placeholder="Email" required>
+		</div>
+		<div>
+			<input type="password" id="password" name="password" placeholder="Password" required>
+		</div>
+		<div>
+			<input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+		</div>
+
+		<div>
+			<input type="submit" value="Register">
+		</div>
+		<a href="\login">I have an account.</a>
+
+
+	</form>
+</body>
+</html>

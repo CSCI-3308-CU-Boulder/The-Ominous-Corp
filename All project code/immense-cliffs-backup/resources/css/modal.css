@@ -1,0 +1,94 @@
+.modal-login {
+    width: 350px;
+}
+.modal-login .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border-width: 4px;
+    border-color: red;
+    background-color: #333 !important;
+}
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+    color: black;
+}
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-login .avatar {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: black;
+    padding: 15px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: red;
+}
+.modal-login .avatar img {
+    width: 100%;
+}
+.modal-login.modal-dialog {
+    margin-top: 80px;
+}
+.modal-login .btn {
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: red;
+    outline: none;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+.modal-login .modal-body a{
+  color: white;
+}
+.modal-login .modal-body a:hover{
+  color: teal;
+}
+/* Style all input fields */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+textarea{
+  resize: none;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: black;
+  color: white;
+}

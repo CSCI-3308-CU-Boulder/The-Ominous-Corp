@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<title>Tank Royale | Dashboard</title>
+  	<link rel="shortcut icon" href="../resources/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- style css -->
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/modal.css">
+  </head>
+  <!-- body -->
+  <body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="../resources/images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+      <!-- header inner -->
+      <div class="header-top">
+        <div class="header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                <div class="full">
+                  <div class="center-desk">
+                    <div class="logo">
+                      <a href="#">Tank Royale</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                <ul class="top_icon">
+                  <li class="button_login">
+                    <a href="#myLogin" data-toggle="modal">Login</a></li>
+                  <li>
+                    <a href="#myRegister" data-toggle="modal">Register</a></li>
+                  <li class="mean-last">
+                    <a href="https://www.google.com/search?q=tanks&tbm=isch"><img src="../resources/images/search_icon.png" alt="#" /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end header inner -->
+        <!-- end header -->
+        <section class="slider_section">
+          <div class="banner_main">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 padding_left0">
+                  <div class="menu-area">
+                    <div class="limit-box">
+                      <nav class="main-menu">
+                        <ul class="menu-area-main">
+                          <li class="active"> <a href="\tanks">Play</a> </li>
+                          <li> <a href="#profile">Profile</a> </li>
+                          <li> <a href="#shop">Shop</a> </li>
+                          <li> <a href="#customize">Customize</a> </li>
+                          <li> <a href="#myContact" data-toggle="modal">Contact</a> </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="text-bg">
+                    <h1>Tank<br>Royale</h1>
+                    <span>Welcome to our epic, multiplayer, tank-themed battle-royale.<br>Are you ready for the fight?! Play today!</span>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                  <div class="text-img">
+                    <figure><img class="rounded" src="../resources/images/logo.jpg" alt="#"/></figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- Login Modal HTML -->
+  	<div id="myLogin" class="modal fade">
+  		<div class="modal-dialog modal-login">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<div class="avatar">
+  						<img src="../resources/icon/default_profile.jpg" alt="Profile Pic">
+  					</div>
+  					<h4 class="modal-title">Log In</h4>
+  					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				</div>
+  				<div class="modal-body">
+            <form action="/login" method="POST">
+          		<div>
+          			<input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+          		</div>
+          		<div>
+          			<input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+          		</div>
+          		<div>
+          			<input class="btn btn-block login-btn" type="submit" value="Login">
+          		</div>
+          		<a href="#myRegister" data-dismiss="modal" data-toggle="modal">Register an Account!</a>
+          	</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+    <!-- Registration Modal HTML -->
+  	<div id="myRegister" class="modal fade">
+  		<div class="modal-dialog modal-login">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<div class="avatar">
+  						<img src="../resources/icon/default_profile.jpg" alt="Profile Pic">
+  					</div>
+  					<h4 class="modal-title">Register</h4>
+  					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				</div>
+  				<div class="modal-body">
+            <form action="/register" method="POST">
+          		<div>
+          			<input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+          		</div>
+          		<div>
+          			<input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+          		</div>
+          		<div>
+          			<input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+          		</div>
+          		<div>
+          			<input class="form-control" type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+          		</div>
+          		<div>
+          			<input class="btn btn-block login-btn" type="submit" value="Register">
+          		</div>
+          		<a href="#myLogin" data-dismiss="modal" data-toggle="modal">I have an account.</a>
+          	</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+    <!-- Registration Modal HTML -->
+  	<div id="myContact" class="modal fade">
+  		<div class="modal-dialog modal-login">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<div class="avatar">
+  						<img src="../resources/icon/default_profile.jpg" alt="Profile Pic">
+  					</div>
+  					<h4 class="modal-title">Contact Us</h4>
+  					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  				</div>
+  				<div class="modal-body">
+            <form action="/contact" method="POST">
+          		<div>
+          			<input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+          		</div>
+          		<div>
+          			<input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+          		</div>
+              <div>
+          			<textarea class="form-control" type="text" rows="5" id="msg" name="msg" placeholder="Message" required></textarea>
+          		</div>
+          		<div>
+          			<input class="btn btn-block login-btn" type="submit" value="Send Message">
+          		</div>
+          	</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+    <!--  footer -->
+    <footr>
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+              <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 ">
+                  <div class="address">
+                    <ul class="social_link">
+                      <li><a href="https://www.facebook.com"><img src="../resources/icon/fb.png"></a></li>
+                      <li><a href="https://twitter.com"><img src="../resources/icon/tw.png"></a></li>
+                      <li><a href="https://www.linkedin.com"><img src="../resources/icon/lin(2).png"></a></li>
+                    </ul>
+                    <img src="../resources/favicon.png" alt="logo" width="50%" height="50%">
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="address">
+                    <h3>Quick links</h3>
+                    <ul class="Menu_footer">
+                      <li class="active"> <img src="../resources/images/3.png" alt="#"> <a href="\tanks">Play</a> </li>
+                      <li><img src="../resources/images/3.png" alt="#"> <a href="#">Top of Page</a> </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="address">
+                    <h3>Contact us</h3>
+                    <ul class="loca">
+                      <li>
+                        <a href="https://www.google.com/maps/place/Boulder,+CO"><img src="../resources/icon/loc.png" alt="#" /></a> Boulder, Colorado, USA
+                      </li>
+                      <li>
+                        <a href="https://mail.google.com"><img src="../resources/icon/email.png" alt="#" /></a> ominous.corporation@gmail.com
+                      </li>
+                      <li>
+                        <a href="https://en.wikipedia.org/wiki/Telephone_number#United_States"><img src="../resources/icon/call.png" alt="#" /></a> +1 (303) 123-4567
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footr>
+    <!-- end footer -->
+
+    <!-- Javascript files-->
+    <script src="../resources/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../resources/js/custom.js"></script>
+  </body>
+</html>
