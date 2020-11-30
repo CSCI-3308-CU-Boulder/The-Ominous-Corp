@@ -9,8 +9,8 @@ public class Movement : MonoBehaviour
     Vector3 newPos;
     public Vector3 Vel;
     Vector3 Acc;
-    const float acc = 0.05F;
-    const float max_speed = 3F;
+    const float acc = 0.2F;
+    const float max_speed = 5.0F;
 
     // Start is called before the first frame update
     void Start()

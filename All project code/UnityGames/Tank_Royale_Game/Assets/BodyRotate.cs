@@ -15,6 +15,10 @@ public class BodyRotate : MonoBehaviour
     {
         V = GameObject.Find("PlayerTank").GetComponent<Movement>().Vel;
         float rotAng = angle(new Vector2(V.x, V.y));
+        if (Mathf.Abs(V.x) <= 0.7 && Mathf.Abs(V.y) <= 0.7)
+        {
+            rotAng = transform.localEulerAngles.z;
+        }
         transform.localEulerAngles = new Vector3(0, 0, rotAng);
     }
 

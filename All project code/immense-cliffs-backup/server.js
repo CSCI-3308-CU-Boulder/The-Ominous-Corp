@@ -57,12 +57,21 @@ app.get('/login', checkAuthenticated, (req,res) => {
 	res.render('login');
 });
 
-app.get('/dashboard', checkNotAuthenticated, (req,res) => {
-	res.render('dashboard',{ user: req.user.name});
+app.get('/dashboard', /*checkNotAuthenticated,*/ (req,res) => {
+	/*res.render('dashboard',{ user: req.user.name});*/
+  res.render('dashboard');
 });
 
 app.get('/tanks', (req,res)=>{
 	res.render('index')
+});
+
+app.get('/profile', (req,res)=>{
+	res.render('profile')
+});
+
+app.get('/shop', (req,res)=>{
+	res.render('shop')
 });
 
 app.get('/logout', (req,res)=> {
